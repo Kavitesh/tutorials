@@ -1,4 +1,4 @@
-# RSA (Rivest-Shamir-Adleman) Cryptosystem
+# RSA (Rivest-Shamir-Adleman)
 
 RSA is a widely-used public-key cryptosystem for secure data transmission. It works by generating a pair of keys: a public key, which can be shared openly, and a private key, which is kept secret.
 
@@ -15,13 +15,13 @@ RSA is a widely-used public-key cryptosystem for secure data transmission. It wo
 
 ## Encryption
 
-- Convert the plaintext message to an integer \( m \) such that \( 0 \leq m < n \).
-- Compute the ciphertext \( c \) using the public key \((e, n)\):  
+1. Convert the plaintext message to an integer \( m \) such that \( 0 \leq m < n \).
+2. Compute the ciphertext \( c \) using the public key \((e, n)\):  
   \( c = m^e \mod n \).
 
 ## Decryption
 
-- Compute the plaintext message \( m \) using the private key \((d, n)\):  
+1. Compute the plaintext message \( m \) using the private key \((d, n)\):  
   \( m = c^d \mod n \).
 
 ## Python Implementation
