@@ -30,6 +30,10 @@ def bytes_to_small_numbers(byte_data: bytes) -> list[int]:
     """Converts bytes back to an array of integers(0 to 255)."""
     return list(byte_data)
 
+def number_to_bits(some_number: int) -> str:
+    """Converts a number to its binary representation in bits."""
+    return bin(some_number)[2:]
+
 # Example usage:
 def main():
     # Example large number
@@ -37,12 +41,16 @@ def main():
 
     # Convert to bytes and back
     byte_data = number_to_bytes(large_number)
-    reconstructed_number = bytes_to_number(byte_data)
+    reconstructed_number = bytes_to_number(byte_data)    
+    binary_view_of_bytes = ''.join(f'{byte:08b}' for byte in byte_data)
+    binary_view_of_number = number_to_bits(large_number)
 
     # Output results
     print(f"Original Number: {large_number}")
     print(f"Byte Representation: {byte_data.hex()}")
-    print(f"Reconstructed Number: {reconstructed_number} \n")
+    print(f"Reconstructed Number: {reconstructed_number}")
+    print(f"Binary view of number: 0000000{binary_view_of_number}")
+    print(f"Binary view of bytes:  {binary_view_of_bytes} \n")
 
 
     # Example array of integers
