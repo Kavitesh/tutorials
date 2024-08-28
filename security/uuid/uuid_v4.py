@@ -1,4 +1,5 @@
 import random
+import uuid
 
 def generate_uuid_v4():
     # Generate 16 random bytes
